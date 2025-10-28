@@ -7,24 +7,25 @@ namespace EvenOddCheck
     {
         static void Main(string[] args)
         {
-            // Simple program to check if number is even or odd
+           
             Console.WriteLine("Enter an integer n:");
             string input = Console.ReadLine();
-            int n = int.Parse(input); // Get input as int
+            int n = int.Parse(input);
 
-            // Use modulo operator to check
+           
             if (n % 2 == 0)
             {
-                Console.WriteLine(n + " is even!"); // Zoj
+                Console.WriteLine(n + " is even!"); 
             }
             else
             {
-                Console.WriteLine(n + " is odd!"); // Fard
+                Console.WriteLine(n + " is odd!"); 
             }
 
-            // Just a fun message
+          
             Console.WriteLine("That's it! Press any key...");
             Console.ReadKey();
         }
     }
+
 }
