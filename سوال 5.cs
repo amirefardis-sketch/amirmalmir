@@ -8,7 +8,6 @@ namespace EvenOddPrimeGoldLemoine
     {
         static void Main(string[] args)
         {
-            // Check if n is even/odd prime, then Goldbach (even) or Lemoine (odd)
             Console.WriteLine("Enter a positive integer n:");
             string input = Console.ReadLine();
             int n = int.Parse(input);
@@ -34,7 +33,6 @@ namespace EvenOddPrimeGoldLemoine
 
             Console.WriteLine(n + " is " + type + ".");
 
-            // If even, Goldbach
             if (n % 2 == 0)
             {
                 Console.WriteLine("Goldbach for " + n + ":");
@@ -47,7 +45,6 @@ namespace EvenOddPrimeGoldLemoine
                     }
                 }
             }
-            // If odd and not prime, Lemoine
             else if (!isPrime)
             {
                 Console.WriteLine("Lemoine for " + n + ":");
@@ -87,4 +84,5 @@ namespace EvenOddPrimeGoldLemoine
             return true;
         }
     }
+
 }
