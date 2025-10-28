@@ -7,7 +7,6 @@ namespace PrimesGoldLemoineRange
     {
         static void Main(string[] args)
         {
-            // Find primes between n and m, and Goldbach/Lemoine for evens/odds in range
             Console.WriteLine("Enter start n:");
             int n = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter end m (m > n):");
@@ -20,7 +19,6 @@ namespace PrimesGoldLemoineRange
             }
 
             Console.WriteLine("Primes between " + n + " and " + m + ":");
-            // Find all primes
             for (int num = n; num <= m; num++)
             {
                 if (IsPrime(num))
@@ -32,7 +30,7 @@ namespace PrimesGoldLemoineRange
             Console.WriteLine("\nGoldbach (for evens) and Lemoine (for odds non-prime):");
             for (int num = n; num <= m; num++)
             {
-                if (num % 2 == 0 && num > 2) // Even: Goldbach
+                if (num % 2 == 0 && num > 2)
                 {
                     Console.WriteLine("Goldbach for " + num + ":");
                     bool foundOne = false;
@@ -43,12 +41,12 @@ namespace PrimesGoldLemoineRange
                         {
                             Console.WriteLine("  " + p1 + " + " + p2);
                             foundOne = true;
-                            break; // One pair per num
+                            break; 
                         }
                     }
                     if (!foundOne) Console.WriteLine("  No pair!");
                 }
-                else if (num % 2 == 1 && num > 5 && !IsPrime(num)) // Odd non-prime: Lemoine
+                else if (num % 2 == 1 && num > 5 && !IsPrime(num))
                 {
                     Console.WriteLine("Lemoine for " + num + ":");
                     bool foundOne = false;
@@ -85,4 +83,5 @@ namespace PrimesGoldLemoineRange
             return true;
         }
     }
+
 }
