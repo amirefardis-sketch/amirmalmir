@@ -7,12 +7,10 @@ namespace LemoineOdd
     {
         static void Main(string[] args)
         {
-            // Program for odd n (not prime): find primes p, q, r where p + q * r = n
             Console.WriteLine("Enter an odd non-prime integer n (greater than 5):");
             string input = Console.ReadLine();
             int n = int.Parse(input);
 
-            // Quick checks
             if (n % 2 == 0 || n <= 5 || IsPrime(n))
             {
                 Console.WriteLine("n must be odd, >5, and not prime!");
@@ -20,23 +18,19 @@ namespace LemoineOdd
             }
 
             bool found = false;
-            // Loop for q (multiplier prime)
-            for (int q = 2; q * q <= n; q++) // q up to sqrt(n) roughly
+            for (int q = 2; q * q <= n; q++)
             {
                 if (!IsPrime(q)) continue;
 
-                // Loop for r (another prime)
                 for (int r = 2; r <= n / q; r++)
                 {
                     if (!IsPrime(r)) continue;
-
-                    int p = n - (q * r); // Calculate p
 
                     if (p > 1 && IsPrime(p))
                     {
                         Console.WriteLine("Found: " + p + " + " + q + " * " + r + " = " + n);
                         found = true;
-                        break; // Find one triple
+                        break;
                     }
                 }
                 if (found) break;
@@ -50,7 +44,6 @@ namespace LemoineOdd
             Console.ReadKey();
         }
 
-        // Same prime check as before
         static bool IsPrime(int num)
         {
             if (num < 2) return false;
@@ -61,4 +54,5 @@ namespace LemoineOdd
             return true;
         }
     }
+
 }}
